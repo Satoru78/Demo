@@ -1,0 +1,11 @@
+﻿<Application x:Class="SportMaster.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:SportMaster"
+             StartupUri="Views\Windows\Autorization.xaml">
+    <Application.Resources>
+        <!--<Style TargetType="Button">
+            <Setter Property="Background" Value="73, 140,81"></Setter>
+        </Style>-->
+    </Application.Resources>
+</Application>

@@ -1,0 +1,41 @@
+﻿<Page x:Class="SportMaster.Views.Pages.ManagerPages.OrderActionPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SportMaster.Views.Pages.ManagerPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="OrderActionPage">
+
+    <Grid>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" >
+            <Button Content="Назад" Name="BackBtn" Click="BackBtn_Click" Width="100" Margin="10"></Button>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Состав заказа:"></TextBlock>
+            <TextBox  Width="200" Text="{Binding Order.OrderCompound}"></TextBox>
+
+            <TextBlock Text="Дата заказа"></TextBlock>
+            <DatePicker SelectedDate ="{Binding Order.DateOfOrder}" Width="200"></DatePicker>
+
+            <TextBlock Text="Дата доставки"></TextBlock>
+            <DatePicker SelectedDate="{Binding Order.DateOfDelivery}" Width="200"></DatePicker>
+
+            <TextBlock Text="Пункт выдачи"></TextBlock>
+            <TextBox Width="200" Text="{Binding Order.PointOfIssue}"></TextBox>
+
+            <TextBlock Text="Ф.И.О Клиента"></TextBlock>
+            <TextBox Width="200" Text="{Binding Order.ClientName}"></TextBox>
+
+            <TextBlock Text="Код получения"></TextBlock>
+            <TextBox Width="200" Text="{Binding Order.Code}"></TextBox>
+
+            <TextBlock Text="Статус заказа"></TextBlock>
+            <ComboBox Width="200" SelectedItem="{Binding Order.OrderStatus}" ItemsSource="{Binding OrderStatuses}" DisplayMemberPath="Title"></ComboBox>
+
+            <Button Content="Сохранить" Name="TxbSave" Click="TxbSave_Click" Margin="0,10"></Button>
+            
+        </StackPanel> 
+    </Grid>
+</Page>

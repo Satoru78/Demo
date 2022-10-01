@@ -1,0 +1,95 @@
+﻿<Page x:Class="SportMaster.Views.Pages.AdminPages.ProductData"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SportMaster.Views.Pages.AdminPages"
+      mc:Ignorable="d" 
+      Loaded="Page_Loaded"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ProductData">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+            <Button Content="Назад" Name="BtnBack" Click="BtnBack_Click" Width="100" Margin="5"></Button>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="ПОИСК:" ></TextBlock>
+            <TextBox Name="txbSearchProduct" SelectionChanged="txbSearchProduct_SelectionChanged" Width="250" Height="20"></TextBox>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center" Orientation="Horizontal">
+            <ComboBox Name="cmbSearchCategory" SelectionChanged="cmbSearchCategory_SelectionChanged" Width="100" Margin="10">
+                <ComboBoxItem>Спортивный инвентарь</ComboBoxItem>
+                <ComboBoxItem>Одежда</ComboBoxItem>
+            </ComboBox>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,140,0">
+            <Button Content="Сменить вид" Name="SwitchView" Click="SwitchView_Click" ></Button>
+        </StackPanel>
+
+        <Grid Name="ProductDataView" Grid.Row="1" Grid.Column="1">
+            <ListView Name="ProductDataListView">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+
+                            <Image Source="{Binding GetImage}"  Grid.Column="0" Width="150" Height="150"></Image>
+                            <StackPanel Grid.Column="1">
+                                <Label Content="{Binding Description}" ContentStringFormat="Описание товара" ></Label>
+                                <Label Content="{Binding Manufacturer}" ContentStringFormat="Производитель:"></Label>
+                                <Label Content="{Binding Count}" ContentStringFormat="Цена: {0}"></Label>
+                            </StackPanel>
+                            <StackPanel Grid.Column="2">
+                                <Label Content="{Binding QuantityInStock}" ContentStringFormat="Кол-во на складе: {0}"></Label>
+                            </StackPanel>
+                        </Grid>
+
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+
+        <Grid Name="ProductColumnView" Grid.Row="1" Visibility="Collapsed">
+            <DataGrid Name="ProductColumn" AutoGenerateColumns="False" ColumnWidth="*">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Артикул" Binding="{Binding Articul}" Width="50"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Название" Binding="{Binding Title}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Еденица измерения" Binding="{Binding Unit}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Стоимость" Binding="{Binding Count}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Скидка" Binding="{Binding Discount}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Производитель" Binding="{Binding Manufacturer}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Поставщик" Binding="{Binding Supplier}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Категория продукта" Binding="{Binding ProductCategory.Title}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Количество на складе" Binding="{Binding QuantitiInStock}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Описание" Binding="{Binding Description}"></DataGridTextColumn>
+                    <DataGridTemplateColumn Header="Изображение" Width="100">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image Source="{Binding GetImage}"  Height="50" Width="50"></Image>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+        
+        <Grid Grid.Row="2">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Button Content="Добавить" Name="AddProductBtn" Click="AddProductBtn_Click" Width="200" Height="25"></Button>
+                <Button Content="Редактировать" Name="EditProductBtn" Click="EditProductBtn_Click" Width="200" Height="25" Margin="40,10,40,10"></Button>
+                <Button Content="Удалить" Name="DeleteProductBtn" Click="DeleteProductBtn_Click" Width="200" Height="25"></Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>

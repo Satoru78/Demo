@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\obaka\source\repos\Tkani\Tkani\obj\Debug\
+C:\Users\obaka\source\repos\Demo\Tkani\Tkani\obj\Debug\
 Tkani
 none
 false
 DEBUG;TRACE
-C:\Users\obaka\source\repos\Tkani\Tkani\App.xaml
+C:\Users\obaka\source\repos\Demo\Tkani\Tkani\App.xaml
 9-1325601968
 2482335943
 261991455059
-18-257329465
+18-247371464
 Views\Pages\AdminPages\AdminMainPage.xaml;Views\Pages\AdminPages\ProductActionPage.xaml;Views\Pages\AdminPages\ProductDataPage.xaml;Views\Pages\ManagerMainPage.xaml;Views\Pages\MangerPages\OrderAction.xaml;Views\Pages\MangerPages\OrderData.xaml;Views\Windows\Admin.xaml;Views\Windows\Autorization.xaml;Views\Windows\Manager.xaml;
 
-True
+False
 

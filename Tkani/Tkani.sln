@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.32602.291
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tkani", "Tkani\Tkani.csproj", "{4F9A2253-3600-4D90-BC69-203EE3792519}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebServer", "WebServer\WebServer.csproj", "{D2C16B51-38DD-46EC-AB0B-B81A7D7EF780}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{4F9A2253-3600-4D90-BC69-203EE3792519}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F9A2253-3600-4D90-BC69-203EE3792519}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F9A2253-3600-4D90-BC69-203EE3792519}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2C16B51-38DD-46EC-AB0B-B81A7D7EF780}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2C16B51-38DD-46EC-AB0B-B81A7D7EF780}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2C16B51-38DD-46EC-AB0B-B81A7D7EF780}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2C16B51-38DD-46EC-AB0B-B81A7D7EF780}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

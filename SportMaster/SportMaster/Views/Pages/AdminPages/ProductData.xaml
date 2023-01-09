@@ -17,6 +17,7 @@
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
             <Button Content="Назад" Name="BtnBack" Click="BtnBack_Click" Width="100" Margin="5"></Button>
+            <Button Content="Сохранить" Name="BtnCsvSave" Click="BtnCsvSave_Click" Width="100" Margin="5"></Button>
         </StackPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock Text="ПОИСК:" ></TextBlock>
@@ -30,7 +31,7 @@
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,140,0">
-            <Button Content="Сменить вид" Name="SwitchView" Click="SwitchView_Click" ></Button>
+            <Button Content="Подробнее" Name="SwitchView" Click="SwitchView_Click" ></Button>
         </StackPanel>
 
         <Grid Name="ProductDataView" Grid.Row="1" Grid.Column="1">

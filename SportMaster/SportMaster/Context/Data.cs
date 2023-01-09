@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SportMaster.Context
 {
-    public partial class Data
+    public static class Data
     {
         public static SportMasterEntities sm = new SportMasterEntities(); 
     }

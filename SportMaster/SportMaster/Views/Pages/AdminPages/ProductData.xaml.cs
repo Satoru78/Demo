@@ -2,6 +2,7 @@
 using SportMaster.Model;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -95,6 +96,23 @@ namespace SportMaster.Views.Pages.AdminPages
                 ProductColumnView.Visibility = Visibility.Collapsed;
                 ProductDataView.Visibility = Visibility.Visible;
             }
+        }
+
+        private void BtnCsvSave_Click(object sender, RoutedEventArgs e)
+        {
+            using (FileStream stream = new FileStream(Environment.CurrentDirectory + @"Product_export", FileMode.Create))
+            {
+                using (StreamWriter writer = new StreamWriter(stream))
+                {
+                    var product = Data.sm.Product.ToList();
+                    writer.WriteLine("Артикул;Название;Еденица измерения;Цена;Скидка;Производитель;Поставщик;Категория продукта;Количество на складе;Описание;Изображение;");
+                    foreach (var item in product)
+                    {
+                        writer.WriteLine($"{item.Articul};{item.Title};{item.Unit};{item.Count};{item.Discount};{item.Manufacturer};{item.Supplier};{item.IDProductCategory};{item.QuantitiInStock};{item.Description};{item.Image};");
+                    }
+                }
+            }
+            MessageBox.Show($"Сохранение прошло успешно, проверьте файл здесь: {Environment.CurrentDirectory}", "Сохранено", MessageBoxButton.OK, MessageBoxImage.Information);
         }
     }
 }
